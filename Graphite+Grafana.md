@@ -1,3 +1,11 @@
+# Data Flow
+
+![alt tag](grafana_img/Diagram.png)
+
+The performance data is extracted by Nagios and then is written down in a file, Graphios takes that file and send the data to collector, in our case is Carbon, the data is aggregated (Average, Max, Min, or other function to tranform an array of points in an time interval to only one point) and then sended to a backend, for Graphite is Whisper, but it can be other time series database or a service as Librato. After the data is stored, Grafana uses it to create the different panels and Dashboards.
+
+(Recommended video: https://www.youtube.com/watch?v=HRcwoBe3F6k)
+
 # What is [Graphite](http://graphite.readthedocs.org/en/latest/)?
 Graphite is a system to store time series data, composed for three elements:
 * Carbon: Is the demon responsible for reciving metrics over the network, aggregate and store them in a storage backend.
@@ -5,6 +13,8 @@ Graphite is a system to store time series data, composed for three elements:
 * Graphite-web: Graphite default front-end, used to explore the data, and has an http api to retrieve data.
 
 Other time series database compatible with Carbon is [Influxdb](https://influxdata.com/time-series-platform/influxdb/), that has his own SQL-like query language.
+
+![alt tag](https://github.com/graphite-project/graphite-web/raw/master/webapp/content/img/overview.png)
 
 ## Installing Graphite
 
