@@ -24,7 +24,7 @@ yum install python-carbon python-whisper
 ```
 /etc/init.d/carbon-cache start
 ```
-
+Carbon runs in port 2004.
 * Installing graphite-web prerequisites
 ```
 yum install graphite-web graphite-web-selinux 'django==1.7'
@@ -42,6 +42,8 @@ yum install graphite-web graphite-web-selinux 'django==1.7'
 su -s /bin/sh apache -c "/usr/lib/python2.6/site-packages/graphite/manage.py syncdb"
 ```
 or change the ownership of the sqlite database created by graphite-web.
+
+* graphite-web comes with a default Apache Virtualhost file (/etc/httpd/conf.d/graphite-web.conf), I changed the port to 81 and add Listen 81 to Apache config file (/etc/httpd/conf/http.conf) to run it in a different port than Grafana.
 
 * Restart Apache
 /etc/init.d/httpd restart
