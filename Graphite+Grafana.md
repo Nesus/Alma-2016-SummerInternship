@@ -1,8 +1,8 @@
 # Data Flow
 
-![alt tag](grafana_img/Diagram.png)
+![Data Flow Diagram](grafana_img/Diagram.png)
 
-The performance data is extracted by Nagios and then is written down in a file, Graphios takes that file and send the data to collector, in our case is Carbon, the data is aggregated (Average, Max, Min, or other function to tranform an array of points in an time interval to only one point) and then sended to a backend, for Graphite is Whisper, but it can be other time series database or a service as Librato. After the data is stored, Grafana uses it to create the different panels and Dashboards.
+The performance data is extracted by Nagios and then is written down in a file, Graphios takes that file and send the data to a collector service, in our case is Carbon, the data is aggregated (Average, Max, Min, or other function to tranform an array of points in an time interval to only one point) and then sended to a backend, for Graphite is Whisper, but it can be other time series database or a service as Librato. After the data is stored, Grafana uses it to create the different panels and Dashboards.
 
 (Recommended video: https://www.youtube.com/watch?v=HRcwoBe3F6k)
 
@@ -14,7 +14,7 @@ Graphite is a system to store time series data, composed for three elements:
 
 Other time series database compatible with Carbon is [Influxdb](https://influxdata.com/time-series-platform/influxdb/), that has his own SQL-like query language.
 
-![alt tag](https://github.com/graphite-project/graphite-web/raw/master/webapp/content/img/overview.png)
+![Graphite Overview](https://github.com/graphite-project/graphite-web/raw/master/webapp/content/img/overview.png)
 
 ## Installing Graphite
 
@@ -114,18 +114,18 @@ protocol = http, http_port = 80, and if you want to run in a diferent path add i
 ## Using Grafana.
 After the installation and configuration go to your root_url (default = localhost:3000) and login to grafana with user and password 'admin'.
 
-![alt tag](grafana_img/loginGrafana.png)
+![loginGrafana](grafana_img/loginGrafana.png)
 
 To start making a dashbord, first we have to add a [Data Source](http://docs.grafana.org/datasources/overview/).
 
-![alt tag](grafana_img/dataSource.png)
+![dataSource](grafana_img/dataSource.png)
 
 
 Click Add New, and then for a Graphite data source, use the grapite-web url. Then test the connection and save the data source.
 
 To create a new dashboard, go to the Home dropdown and select new. (Also you can create dashboard playlist, and automatically change the dashboard showing every a fixed amount of time).
 
-![alt tag](grafana_img/SelectDashboard.png)
+![selectDashboard](grafana_img/SelectDashboard.png)
 
 The two main components of a Dashboard are Rows and Panels, each row is divided in 12 spaces, each panel uses at least 1 space or can use the full width of the Row.
 
@@ -154,7 +154,7 @@ Grafana has 3 panels that use metrics:
 ### Adding Annotations
 Grafana uses annotations as important events in panels, annotations are added from a datasource, for example in Elasticsearch, create a query using [Lucene Query Syntax](http://www.lucenetutorial.com/lucene-query-syntax.html), and fill the Time field with the timestamp used in the Elasticsearch Document. The other fields are used to show the data.
 
-![alt tag](grafana_img/addingAnnotations.png)
+![addAnnotations](grafana_img/addingAnnotations.png)
 
 The other datasources uses another query syntax.
 
