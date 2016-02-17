@@ -156,5 +156,9 @@ Grafana uses annotations as important events in panels, annotations are added fr
 
 ![addAnnotations](grafana_img/addingAnnotations.png)
 
+In the image above, the query searches all the documents where the site is 'SCO'.
+
 The other datasources uses another query syntax.
 
+### Sharing panels to other webpages
+To put a panel from Grafana in other web pages, select a panel, go to share and select an option, for a static image, go to link and use the 'Direct link rendered image', for a dynamic graph, go to embed and copy the iframe (change the width and height to fit your webpage). 
