@@ -151,6 +151,15 @@ Grafana has 3 panels that use metrics:
 ### Time intervals
  Select time intervals in line graphs (zoom in) to get better resolution (depends on the data retentions schemas). Zoom out to go back. Has an autorefresh option, to reload the dashboard panels.
 
+### Using series as parameters.
+You can aggregate series using #[A-Z] in the aggregation query.
+
+For example if you want the average of all the series (Create a new time series with the average between the other series) 
+
+![Series Aggregation](grafana_img/pingQuery.png)
+
+In this case Serie A, query for the ping of each arc, then create a new Series (B) that has the average of the other series. 
+
 ### Adding Annotations
 Grafana uses annotations as important events in panels, annotations are added from a datasource, for example in Elasticsearch, create a query using [Lucene Query Syntax](http://www.lucenetutorial.com/lucene-query-syntax.html), and fill the Time field with the timestamp used in the Elasticsearch Document. The other fields are used to show the data.
 

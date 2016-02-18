@@ -16,7 +16,7 @@
 * Created a form and a view to create Hardware Failure Events.
 
 ## Week 3:
-* Downloaded SQL Developer, and tested the Backlog Query locally (not with the DBLink, and using different dates ranges for the same table), tested a "left join", "not in" and "minus" query, the "left join" one get the best performance, but in production (using DB Links), but that is the one getting stucked in the script, the second one is the "not one" 
+* Downloaded SQL Developer, and tested the Backlog Query locally (not with the DBLink, and using different dates ranges for the same table), tested a "left join", "not in" and "minus" query, the "left join" one get the best performance, but in production (using DB Links), but that is the one getting stucked in the script, the second one is the "not one", works better and pull less rows from the Arc. Also tested if using the date field as a string get the same results as using it like a oracle date object, and it return the same results, so there is no need to transform the date row to a oracle date object. 
 * Changed the monitoring architecture of APO, trying to **merge** all the monitoring system in one, using Nagios.
 *  Installed and cofigure Nagios in development enviroment, tested version 3.5.1, and 4.1.1.
   * Nagios 3.5.1: Comes in the RHEL6 repositories, so is easier to install. Doesn't have a way to retrieve the current status of the service or host without parsing the status.dat file or webpage manually.

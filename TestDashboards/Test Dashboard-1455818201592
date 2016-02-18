@@ -1,0 +1,678 @@
+{
+  "id": 1,
+  "title": "Test Dashboard",
+  "originalTitle": "Test Dashboard",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 1,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "PRTG.PINGDBESO.latency",
+              "yaxis": 1
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode(PRTG.$ping.latency, 1)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Arcs Latency",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            },
+            {
+              "text": "Avg",
+              "value": "avg"
+            },
+            {
+              "text": "Max",
+              "value": "max"
+            },
+            {
+              "text": "Min",
+              "value": "min"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 9,
+          "isNew": true,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 2,
+            "desc": false
+          },
+          "span": 6,
+          "styles": [
+            {
+              "colorMode": "value",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "Current",
+              "thresholds": [
+                "0",
+                " 500",
+                " 1000"
+              ],
+              "type": "number",
+              "unit": "ms"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "ms"
+            }
+          ],
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(PRTG.PINGDBESO.latency, 'DB Eso')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(PRTG.PINGHQESO.latency, 'HQ Eso')"
+            },
+            {
+              "refId": "C",
+              "target": "alias(PRTG.PINGNAOJ.latency, 'NAOJ')"
+            },
+            {
+              "refId": "D",
+              "target": "alias(PRTG.PINGNRAO.latency, 'NRAO')"
+            }
+          ],
+          "title": "Arcs Latency Summary",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        }
+      ],
+      "title": "Arcs Latency"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "localhost.Uptime.type",
+              "yaxis": 2
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "localhost.Uptime.uptime_minutes"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Uptime",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "m",
+            "short"
+          ]
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            },
+            {
+              "text": "Avg",
+              "value": "avg"
+            },
+            {
+              "text": "Min",
+              "value": "min"
+            },
+            {
+              "text": "Max",
+              "value": "max"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 10,
+          "isNew": true,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
+          },
+          "span": 6,
+          "styles": [
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 2,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "m"
+            }
+          ],
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(apo-student-02.Uptime.uptime_minutes, 'apo-student-02')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(localhost.Uptime.uptime_minutes, 'localhost')"
+            }
+          ],
+          "title": "Uptime Summary",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        }
+      ],
+      "title": "Backlog"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "25px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(54, 236, 7, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 4,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "ngas01_sco_alma_cl.NGAS_status_7777.status"
+            }
+          ],
+          "thresholds": "0,1",
+          "title": "ngas01.sco.alma.cl:7777",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Up",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(32, 154, 0, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 5,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "ngas01_sco_alma_cl.NGAS_status_7778.status"
+            }
+          ],
+          "thresholds": "0,1",
+          "title": "ngas01.sco.alma.cl:7778",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Up",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(32, 154, 0, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 6,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "ngas01_sco_alma_cl.NGAS_status_7779.status"
+            }
+          ],
+          "thresholds": "0,1",
+          "title": "ngas01.sco.alma.cl:7779",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Up",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(32, 154, 0, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "id": 7,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "ngas01_sco_alma_cl.NGAS_status_7780.status"
+            }
+          ],
+          "thresholds": "0,1",
+          "title": "ngas01.sco.alma.cl:7780",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "Up",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "Down",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "title": "NGAS Status"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [],
+      "title": ""
+    }
+  ],
+  "time": {
+    "from": "2016-02-15T12:35:33.622Z",
+    "to": "2016-02-17T13:34:22.382Z"
+  },
+  "timepicker": {
+    "now": true,
+    "nowDelay": "5m",
+    "refresh_intervals": [
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "tags": [],
+          "text": "PINGDBESO + PINGHQESO + PINGNAOJ + PINGNRAO",
+          "value": [
+            "PINGDBESO",
+            "PINGHQESO",
+            "PINGNAOJ",
+            "PINGNRAO"
+          ]
+        },
+        "datasource": null,
+        "includeAll": false,
+        "label": "PING",
+        "multi": true,
+        "multiFormat": "glob",
+        "name": "ping",
+        "options": [
+          {
+            "selected": true,
+            "text": "PINGDBESO",
+            "value": "PINGDBESO"
+          },
+          {
+            "selected": true,
+            "text": "PINGHQESO",
+            "value": "PINGHQESO"
+          },
+          {
+            "selected": true,
+            "text": "PINGNAOJ",
+            "value": "PINGNAOJ"
+          },
+          {
+            "selected": true,
+            "text": "PINGNRAO",
+            "value": "PINGNRAO"
+          },
+          {
+            "selected": false,
+            "text": "PINGRack2N-AS-62",
+            "value": "PINGRack2N-AS-62"
+          },
+          {
+            "selected": false,
+            "text": "PINGRack7N-AS-60",
+            "value": "PINGRack7N-AS-60"
+          }
+        ],
+        "query": "PRTG.PING*",
+        "refresh": false,
+        "regex": "",
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": true
+      }
+    ]
+  },
+  "annotations": {
+    "list": [
+      {
+        "datasource": "Hardware_failures",
+        "enable": true,
+        "iconColor": "rgb(198, 190, 190)",
+        "iconSize": 13,
+        "lineColor": "rgba(255, 96, 96, 0.592157)",
+        "name": "OSF Hardware Failures",
+        "query": "site:OSF",
+        "showLine": true,
+        "tagsField": "site",
+        "textField": "component",
+        "timeField": "date",
+        "titleField": "system"
+      },
+      {
+        "datasource": "Hardware_failures",
+        "enable": false,
+        "iconColor": "#C0C6BE",
+        "iconSize": 13,
+        "lineColor": "rgba(255, 96, 96, 0.592157)",
+        "name": "SCO Hardware Failures",
+        "query": "site:SCO",
+        "showLine": true,
+        "tagsField": "site",
+        "textField": "component",
+        "timeField": "date",
+        "titleField": "system"
+      }
+    ]
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 17,
+  "links": []
+}
