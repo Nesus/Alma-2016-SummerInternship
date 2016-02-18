@@ -75,3 +75,14 @@ define service{
         check_command                   check_prtg_ping!4710!500!700
 }
 ```
+
+# Other Plugins
+* [check_uptime](https://exchange.nagios.org/directory/Plugins/System-Metrics/Uptime/check_uptime--2F-check_snmp_uptime/details):
+Check the uptime from the remote server, used with check_nrpe.
+  * Download check_uptime.pl to each remote server, and put in plugin folder
+  * Add command to nrpe.cfg, use -f to get uptime in minutes and -w, -c for warning and critical notifications if uptime is less than a value. 
+  * Create service using check_nrpe command and pass the arguments (**if using xinetd to run nrpe, install it to support arguments**).
+
+
+
+
