@@ -1,4 +1,9 @@
 # Student Summer Intership APO 2016
+
+#Documentation:
+* [Graphite & Grafana Installation](Graphite+Grafana.md) 
+* [Nagios Plugins](nagios_plugins/README.md)
+
 ## Week 1:
 * Get to know how ALMA works and the main job of APO. 
 * Configuring development enviroment: installing RHEL6, and other packages.
