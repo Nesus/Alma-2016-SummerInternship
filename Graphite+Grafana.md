@@ -89,7 +89,7 @@ GUIDE: https://github.com/shawn-sterling/graphios
     * Pros:
       * Send only the important data
     * Cons:
-      * Have to configure each service by hand.
+      * Have to configure each service manually.
 
 # Visualizing Performance Data
 To visualize time series we will use [Grafana](http://grafana.org/) that allows us, to create fully customizable dashboards with data from Graphite, InfluxDB or Elasticsearch.
