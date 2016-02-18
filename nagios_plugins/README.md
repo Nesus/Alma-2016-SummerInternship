@@ -54,7 +54,10 @@ Check the ARC status, and latency using PRTG API.
 ### How it Works
 Sends a HTTP GET request to PRTG sensor status API, and parse the json response.
 
-This plugin is meant to be use locally (localhost), and has three parameters, the sensor_id from the prtg ping sensor, the warning latency and a critical latency (both used by nagios to send notifications). Doesnt work with other sensors. 
+This plugin is meant to be use locally (localhost), and has three parameters, the sensor_id from the prtg ping sensor, the warning latency and a critical latency (both used by nagios to send notifications). Doesnt work with other sensors.
+
+*Configuration*: Add prtg username and password to PRTG_USERNAME and PRTG_PASSWORD enviroment variables to .bashrc (export PRTG_USERNAME='username') 
+
 ### Configuring in Nagios
 Add the command to Nagios.
 ```

@@ -2,6 +2,7 @@
 
 import requests
 import sys
+import os
 from xml.dom import minidom
 
 requests.packages.urllib3.disable_warnings()
@@ -10,8 +11,8 @@ UNKNOWN = -1
 OK = 0
 WARNING = 1
 CRITICAL = 2
-username = 'monarcs'
-password = 'a1maarcs'
+username = os.environ['PRTG_USERNAME']
+password = os.environ['PRTG_PASSWORD']
 
 try:
 	params = sys.argv

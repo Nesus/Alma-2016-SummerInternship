@@ -1,7 +1,7 @@
 # Student Summer Intership APO 2016
 
 # Documentation:
-* [Graphite & Grafana Installation](Graphite+Grafana.md) 
+* [Graphite & Grafana](Graphite+Grafana.md) 
 * [Nagios Plugins](nagios_plugins)
 
 ## Week 1:
