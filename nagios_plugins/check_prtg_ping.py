@@ -27,6 +27,8 @@ requiredNamed.add_argument('-c', '--critical', type=int, required=True, help='Cr
 
 args = parser.parse_args()
 
+#Using Enviroment variables if user and password
+#are not set
 if args.user is None:
 	username = os.environ['PRTG_USERNAME']
 else:
@@ -52,6 +54,7 @@ try:
 		'username': username,
 		'password': password
 	}
+	#Sending HTTP GET Request with parameters
 	s = requests.get(sensor_request,params= s_params, verify= False)
 	s = s.json()['sensordata']
 	up = 1 if s['statustext'] == 'Up' else 0

@@ -87,6 +87,31 @@ define service{
 }
 ```
 
+## check_backlog.py
+
+### How it works
+
+Using Alejandro's Script, consults the production and ARC database to see how many files and size are in the local db and not the external.
+
+The query in the script uses the NOT IN statement, further work have to check if there is a way to obtain a better performance changing the query.
+
+To run the plguin just pass the ARC Shortname as argument to the script. For example:
+```
+./check_backlog.py eu
+```
+Is case insensitive, so don't worry to use lower case.
+
+For default it show OK status if there's no files older than a day (configurable with -ol flag). To send critical notifications add a warning flag, with a size in gb and a critical flag with the amount of files.
+```
+./check_backlog.py arc -w size_in_gb -c files
+
+```
+To see other options 
+
+```
+./check_backlog.py -h
+``` 
+
 # Other Plugins
 * [check_uptime](https://exchange.nagios.org/directory/Plugins/System-Metrics/Uptime/check_uptime--2F-check_snmp_uptime/details):
 Check the uptime from the remote server, used with check_nrpe.

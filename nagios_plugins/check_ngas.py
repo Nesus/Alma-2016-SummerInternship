@@ -22,14 +22,18 @@ args = parser.parse_args()
 try:	
 	server = str(args.hostname).replace('http://','')
 	port = str(args.port)
+
+	#Making HTTP GET request
 	r = requests.get('http://'+server+':'+port+'/STATUS')
 	res = r.content
+	#Parsing Response
 	data = minidom.parseString(res)
 	data = data.getElementsByTagName('Status')[0]
 	data = data.attributes
 	state = data['State'].value
 	subState = data['SubState'].value
 	
+	#Sending information
 	if state == 'ONLINE' and subState == 'IDLE':
 		print("Ngas Online and IDLE |status=1 subStatus=1")
 		sys.exit(OK)
@@ -45,5 +49,6 @@ try:
 		print("Ngas Offline |status=0 sub_status=-1")
 		sys.exit(CRITICAL)
 except Exception as e:
+	#If something go wrong in the HTTP GET Request
 	print("Can't connect to server: "+str(e)+"|status=0 sub_status=-1")
 	sys.exit(UNKNOWN)
