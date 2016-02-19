@@ -39,13 +39,14 @@ CRITICAL = 2
 DAYS = 1
 HOURS = 0
 OLDER_DAYS = 1
+
 #Parsing arguments
 parser = argparse.ArgumentParser(description='Get Backlog Size in a certain period of time')
 parser.add_argument('arc', type=str, help='ARC Shortname')
 parser.add_argument('-d','--days', type=int, help='Days to consult backlog size (Default 15 days)')
-parser.add_argument('-hs','--hours', type=int, help='Days to consult backlog size (Default 0 days)')
+parser.add_argument('-hs','--hours', type=int, help='Days to consult backlog size (Default 0 hours)')
 
-parser.add_argument('-ol','--older', type=int, help='Sends Warning if a file is older than a numer of days before (default 1 day)')
+parser.add_argument('-ol','--older', type=int, help='Sends Warning if a file is older than a numer of days before (Default 1 day)')
 parser.add_argument('-w','--warning', type=int, help='Add to warning alert if there is a big backlog (Size in GB)')
 parser.add_argument('-c','--critical', type=int, help='Sends Critial Alert when there is a lot of files Stucked and the backlog size is Big (Integer: Amount of files)')
 
@@ -155,7 +156,8 @@ try:
 	orcl.close()
 	
 except Exception,e:
-	cursor.close()
+	if cursor:
+		cursor.close()
 	orcl.close()
 	print "Problems connecting to ARC: "+arc+ " Error: "+ str(e)
 	sys.exit(UNKNOWN)
