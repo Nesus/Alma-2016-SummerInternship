@@ -15,6 +15,8 @@ for more info run
 ./check_ngas.py -h
 ```
 
+** Requirements ** : python-requests
+
 ### Configuring in Nagios
 Add the following command
 ```
@@ -68,6 +70,7 @@ For more info about the plugin parameters run
 ```
 ./check_prtg_ping.py -h
 ```
+** Requirements ** : python-requests
 
 ### Configuring in Nagios
 Add the command to Nagios.
@@ -111,6 +114,30 @@ To see other options
 ```
 ./check_backlog.py -h
 ``` 
+
+**Requirements:** import cx_Oracle
+
+## Configuring in Nagios
+
+* Create a command
+```
+define command {
+        command_name check_backlog
+        command_line $USER1$/check_backlog.py $ARG1$ -ol $ARG2$ -d $ARG3$ -hs $ARG4$ -w $ARG5$ -c $ARG6$
+}
+```
+
+* Create a service for each Arc
+
+```
+define service{
+        use                             long-monitoring-service
+        host_name                       localhost
+        service_description             Backlog EU
+        check_command                   check_backlog!EU!1!2!0!200
+}
+```
+
 
 # Other Plugins
 * [check_uptime](https://exchange.nagios.org/directory/Plugins/System-Metrics/Uptime/check_uptime--2F-check_snmp_uptime/details):
