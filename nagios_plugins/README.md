@@ -6,7 +6,13 @@ Sends a HTTP GET request to http://$NGAS_HOST$:$PORT$/STATUS and parse the respo
 
 Uses two parameters, the host address (without http://) and the port. For example: 
 ```
-./check_ngas.py ngasXX.site.alma.cl 7777
+./check_ngas.py -H ngasXX.site.alma.cl -p 7777
+```
+
+for more info run 
+
+```
+./check_ngas.py -h
 ```
 
 ### Configuring in Nagios
@@ -14,7 +20,7 @@ Add the following command
 ```
 define command {
         command_name check_ngas_status
-        command_line $USER1$/check_ngas.py $HOSTNAME$ $ARG1$
+        command_line $USER1$/check_ngas.py -H $HOSTNAME$ -p $ARG1$
 }
 ```
 And define a service for each port.
@@ -58,12 +64,17 @@ This plugin is meant to be use locally (localhost), and has three parameters, th
 
 *Configuration*: Add prtg username and password to PRTG_USERNAME and PRTG_PASSWORD enviroment variables to .bashrc (export PRTG_USERNAME='username') 
 
+For more info about the plugin parameters run
+```
+./check_prtg_ping.py -h
+```
+
 ### Configuring in Nagios
 Add the command to Nagios.
 ```
 define command {
         command_name check_prtg_ping
-        command_line $USER1$/check_prtg_ping.py $ARG1$ $ARG2$ $ARG3$
+        command_line $USER1$/check_prtg_ping.py $ARG1$ -w $ARG2$ -c $ARG3$
 }
 ```
 And then create a service for each sensor_id.
